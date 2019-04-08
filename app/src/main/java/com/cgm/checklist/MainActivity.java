@@ -20,9 +20,6 @@ import com.cgm.checklist.settingsApp.SettingsActivity;
 
 /** CheckList 2.0
  * Calebe Martins 04/02/2019
- * Colocar item com adpter imageButton contendo um lapis para editar
- * Unificar comando de deletar itens
- * Teste de utilizar fragmente em vez de Activity para a ListItems
  * String.xml LINHA 9
  * https://developer.android.com/guide/topics/ui/layout/recyclerview#java
  */
