@@ -69,11 +69,15 @@ public class ListItemsFrag extends Fragment {
         listItems = (ListView) view.findViewById(R.id.list_itemsFrag);
         userInput = (EditText) view.findViewById(R.id.editTextItemFrag);
 
-        LoadDataItems();
-
         setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        LoadDataItems();
+        super.onResume();
     }
 
     // Carrega os itens da pasta selecionada
@@ -97,8 +101,6 @@ public class ListItemsFrag extends Fragment {
         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_multiple_choice, listData);
         // Criador da lista adaptada e seta a lista adaptada
         listItems.setAdapter(adapter);
-
-
 
         /**Quando a preferencia de seleção simples dos itens estiver ativa, após sair do app os
          * itens selecionados serão descelecionados altomaticamente. Caso esteja desativada, faz
@@ -192,23 +194,6 @@ public class ListItemsFrag extends Fragment {
             animation = AnimationUtils.loadAnimation(getContext(), android.R.anim.fade_out);
             animation.setFillAfter(false);
             view.setAnimation(animation);
-            animation.setAnimationListener(new Animation.AnimationListener() {
-                @Override
-                public void onAnimationStart(Animation animation) {
-
-                }
-
-                @Override
-                public void onAnimationEnd(Animation animation) {
-
-                }
-
-                @Override
-                public void onAnimationRepeat(Animation animation) {
-
-                }
-            });
-            view.startAnimation(animation);
         }
     }
 
