@@ -43,8 +43,6 @@ public class MenuFrag extends Fragment {
     ArrayAdapter adapter;
     EditText editText;
 
-
-
     public static List<String> UserSelection = new ArrayList<>();
     boolean[] checkedItems;
 
@@ -87,12 +85,22 @@ public class MenuFrag extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 type_folder = listView.getItemAtPosition(position).toString();
 
-                ListItemsFrag listItemsFrag = new ListItemsFrag();
+//                ListItemsFrag listItemsFrag = new ListItemsFrag();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("NOME_DA_PASTA", type_folder);
+//                listItemsFrag.setArguments(bundle);
+//                FragmentTransaction manager = getFragmentManager().beginTransaction();
+//                manager.replace(R.id.frameContainer, listItemsFrag).addToBackStack(null).commit();
+
+
+
+                RecyclerViewFrag recyclerViewFrag = new RecyclerViewFrag();
                 Bundle bundle = new Bundle();
                 bundle.putString("NOME_DA_PASTA", type_folder);
-                listItemsFrag.setArguments(bundle);
+                recyclerViewFrag.setArguments(bundle);
                 FragmentTransaction manager = getFragmentManager().beginTransaction();
-                manager.replace(R.id.frameContainer, listItemsFrag).addToBackStack(null).commit();
+                manager.replace(R.id.frameContainer, recyclerViewFrag).addToBackStack(null).commit();
+
             }
         });
 
